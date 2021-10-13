@@ -1,0 +1,420 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+.title{
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 80px;
+}
+.container{
+  margin:0 105px;
+  padding-top:30px;
+}
+/* ---------------------------------------------------------PROMO------------------------------------------------------------- */
+.promo {
+ background: url(../img/promo.png) center center/cover no-repeat;
+ min-height: 700px;
+ margin:0;
+}
+
+.header{
+display: flex;
+justify-content:space-between;
+align-items: center ;
+
+}
+.nav_list{
+  display: flex;
+  /* убираем точки */
+  list-style-type: none;
+
+}
+.nav_item a{
+  font-family: 'Montserrat', sans-serif;
+  font-size:18px;
+  font-weight:400;
+  color:black;
+  text-decoration: none;
+  padding:10px 16px;
+}
+
+.nav_item a:hover {
+  background-color: #c94362;
+  color:white;
+  border-radius: 7px;
+  transition:all 0.28s ease-out;
+}
+
+.promo_content{
+  display: flex;
+  margin-top:171px;
+  justify-content:space-between;
+}
+
+.promo_title {
+  font-size: 90px;
+  font-family: "Montserrat";
+  color: #c94362;
+  font-weight: bold;
+  line-height: 80px;
+}
+.promo_title span{
+  color:black;
+}
+.promo_text{
+  width:50%;
+}
+
+.promo_lorem{
+  font-size: 20px;
+  font-family: "PT Serif";
+  color: rgb(28, 28, 28);
+  line-height: 28px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color:#c94362;
+  border-radius: 8px;
+  justify-content: space-between;
+  /* сместим немного ниже фона */
+  position: relative;
+  bottom:-77px;
+  width: 400px;
+}
+.form_title{
+  font-size: 26px;
+  font-family: "Montserrat";
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
+  margin-bottom:36px;
+  text-align: center;
+}
+
+.form_input{
+  padding:19px  247px 19px 19px;
+  font-family: "PTSerif";
+  font-size:20px;
+  color:#b5b5b5;
+  margin-bottom:23px;
+  border-radius: 6px;
+  border:none;
+}
+
+.form_input:focus{
+  outline:none;
+}
+.form_input:nth-child(5){
+  margin-bottom: 27px;
+}
+/* ----------------------------------------------end promo-------------------------------------------------------------------------- */
+
+/*----------------------------------------------- работа с чекбоксом начинается-------------------------------------------------- */
+.form_checkbox{
+display: none;
+}
+.fake{
+display: inline-block;
+height: 20px;
+width: 20px;
+border-radius: 5px;
+background-color: white;
+position:relative;
+margin-left: 10px;
+}
+.fake::before{
+  content:"";
+  position:absolute;
+  height: 20px;
+  width: 20px;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  display: block;
+  background-image: url(../img/Checkmark_icon-icons.com_71846.svg);
+  /* скроем и зададим немного анимации,чтобы было все плавно */
+  opacity: 0;
+  transition: 0.3s;
+}
+.form_checkbox:checked + .fake::before{
+  /* проявим при чекеде фэйковый чекбокс */
+opacity: 1;
+}
+/*  ===========================закончили чекбокс====================================*/
+/*========================================================== кнопка send ===================================*/
+.text_checkbox{
+  color:#fff;
+  font-size: 20px;
+}
+.probel{
+  display:inline-block;
+  width: 20px;
+
+}
+.form_button{
+  margin-top: 20px;
+  padding:14px 140px;
+  font-size: 22px;
+  background-color: #000;
+  color:#fff;
+  border-radius: 10px;
+  border: none;
+}
+.form_button:hover{
+  box-shadow: 2.5px 2.5px 0px 0px;
+  transition:all 0.2s ease-out;
+}
+/* --------------------------------------------end send------------------------------------------------ */
+
+
+
+
+/* -------------------------------------section our services ------------------------------------*/
+.our_services_title{
+  color: #c94362;
+}
+.our_services_title span{
+  color: #000;
+}
+.our_services_content{
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+/* выравняли картинку с текстом */
+.our_services_item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.our_services_text{
+  font-size: 20px;
+  font-family: "PT Serif";
+  color: rgb(22, 22, 22);
+  line-height: 1.4;
+  text-align: center;
+  padding:50px 0;
+}
+/* -------------------end our services---------------- */
+/* --------------our story----------------- */
+.our_story{
+  background-color: #c94362;
+  padding: 20px 0;
+}
+.our_story_content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:22px;
+
+}
+.our_story_text{
+  font-size: 20px;
+  font-family: "PT Serif";
+  color: rgb(255, 255, 255);
+  line-height: 1.4;
+  text-align: left;
+}
+.our_story_button{
+  text-decoration: none;
+  font-size: 22px;
+  font-family: "Montserrat";
+  color: rgb(22, 22, 22);
+  line-height: 1.273;
+  text-align: center;
+  background-color: #e3d5b8;
+  padding:23px 63px;
+  border-radius: 8px;
+}
+.our_story_button:hover{
+   background-color: #d3bf97;
+}
+
+
+/* -----------our story end---------------------- */
+/* ------------PRICING------------------- */
+.pricing{
+  background-color: #e3d5b8;
+  padding-top:50px;
+}
+.pricing_title{
+  text-align: center;
+  margin-bottom: 60px;
+}
+.pricing_content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.pricing_item{
+  background-color: #fff;
+  padding:35px 60px 0px 60px;
+  border-radius: 5px;
+  display:flex;
+  flex-direction: column;
+  position: relative;
+}
+.pricing_name{
+  font-size: 22px;
+  font-family: "PT Serif";
+  color: rgb(22, 22, 22);
+  line-height: 1.273;
+  text-align: center;
+}
+.pricing_cost{
+  font-size: 60px;
+  font-family: "Montserrat";
+  color: rgb(208, 57, 88);
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  margin:0px 0;
+}
+.pricing_text{
+  font-size: 20px;
+  font-family: "PT Serif";
+  color: rgb(22, 22, 22);
+  line-height: 1.4;
+  text-align: center;
+}
+.pricing_button{
+  font-size: 22px  ;
+  font-family: "Montserrat";
+  color: black;
+  line-height: 1.273;
+  text-align: center;
+  text-decoration: none;
+  background-color: #e3d5b8;
+  border-radius: 5px;
+  display: inline-block;
+  width:205px;
+  height: 46px;
+  padding-top: 21px;
+  transition: all 0.3s ease;
+}
+.pricing_button:hover{
+  background-color:#c94362;
+}
+
+/* ----------------triangle + .pricing_item{position:relative;}------------------ */
+
+.triangle{
+  width:0px;
+  height: 0px;
+  border-top: 90px solid #b4a993;
+  border-right: 90px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.triangle p{
+  font-size: 16px;
+  font-family: "PT Serif";
+  color: rgb(31, 31, 31);
+  line-height: 1.75;
+  -moz-transform: matrix( 0.67739919539163,-0.73561561299552,0.73561561299552,0.67739919539163,0,0);
+  -webkit-transform: matrix( 0.67739919539163,-0.73561561299552,0.73561561299552,0.67739919539163,0,0);
+  -ms-transform: matrix( 0.67739919539163,-0.73561561299552,0.73561561299552,0.67739919539163,0,0);
+  position: absolute;
+  top:-92px;
+  left:5px;
+}
+/* -------------reviews--------------------- */
+.reviews{
+  padding-top:150px;
+}
+.reviews>.container{
+  display: flex;
+  justify-content: space-between;
+}
+.testimonial{
+  width:40%;
+}
+.testimonial_titile{
+  text-align: center;
+}
+.gallery_title{
+  text-align: center;
+}
+.gallery{
+  width: 40%;
+}
+.testimonial_content{
+ display: flex;
+ flex-direction:column;
+}
+.testimonial_item{
+  position: relative;
+  padding:23px 76px 30px 27px;
+  margin-bottom: 42px;
+  transition: all 0.5s ease;
+}
+.testimonial_item:hover{
+  background-color: #e3d5b8;
+  border-radius: 8px;
+}
+.testimonial_img{
+  position: absolute;
+  right: -13%;
+  top:7%;
+}
+.testimonial_text{
+  font-size: 20px;
+  font-family: "PT Serif";
+  color: rgb(22, 22, 22);
+  line-height: 1.4;
+  text-align: left;
+}
+.testimonial_subtext{
+  font-size: 20px;
+  font-family: "Montserrat";
+  color: rgb(208, 57, 88);
+  line-height: 1.4;
+  text-align: left;
+  padding-bottom:27px;
+}
+.gallery_content{
+  padding-left: 70px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery_subtext a{
+  text-align: center;
+  padding-top: 42px;
+  padding-left: 80px;
+  font-size: 20px;
+  font-family: "Montserrat";
+  color: #d03958;
+  text-decoration: none;
+}
+
+.gallery_subtext a:hover{
+  text-decoration: underline;
+}
+/* ---------------footer-------------- */
+.footer{
+  background-color: #161616;
+  height: 182px;
+}
+.footer > .container{
+  display: flex;
+  justify-content:space-between;
+}
+.footer_text{
+  font-size: 20px;
+  font-family: "PT Serif";
+  color: rgb(255, 255, 255);
+  line-height: 1.1;
+  text-align: left;
+  margin-top:60px;
+}
+.footer_text span{
+  color:#d03958;
+}
+.footer_logo{
+  margin-top: 30px;
+}

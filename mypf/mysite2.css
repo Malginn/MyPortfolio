@@ -1,0 +1,729 @@
+:root{
+    /*----- МЫ ЗАГНАЛИ ЦВЕТА В ПЕРЕМЕННЫЕ #2b2a2c------ */
+    --black: #9e9e9e;
+    --gray: #6a696b;
+    --gray-light: #dedede;
+    --white: #fff;
+
+}
+/* ----ДЕЛАЕМ БАЗОВЫЕ УСТАНОВКИ ДЛЯ ВСЕГО САЙТА----- */
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem ;
+    color: black;
+    background: rgb(36, 36, 36);
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p{
+    margin: 0 0 1rem;
+}
+/* ----    *-ЭТО ДЛЯ ВСЕХ, ДЛЯ ВСЕХ С ПСЕВДОКЛАССОМ BEFORE , AFTER--- какой-то АЛГОРИТМ ПОДСЧЕТА----- */
+*,*:before,*:after{
+    box-sizing: border-box;
+}
+/* -----весь сайт имеет ограничение по ширине 1200 и рястягивается width на 100%, внутренние отсутпы 1rem слева и справа и по высоте у нас в центре контейнер с сайтом -----  */
+.container{
+    width:100%;
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin:0 auto;
+}
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+.header{
+    padding:1.2rem 0;
+    position: relative;
+}
+.header_content{
+    display: flex;
+    justify-content: space-between;
+    /* --выравняем по верртикали-- */
+    align-items: center;
+}
+.user_content{
+    padding-left:0.8rem;
+}
+.user{
+    display: flex;
+}
+.user_avatar{
+    width: 65px;
+}
+.user_name{
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: bold;
+    margin-bottom: 3px;;
+}
+.user_prof{
+    font-size: 0.75rem;
+    color: var(--black);
+    opacity: 0.7;
+}
+.nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+}
+.nav_link{
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    position: relative;
+    color: var(--black);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration:none;
+
+}
+.nav_link:hover{
+    border-bottom: 3px solid var(--black);
+    padding:0 0 4px;
+    transition-duration: 0.2s;
+}
+/* --------------------------------------------------------------------------------------------------------------------------- */
+.intro_inner{
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid black;
+}
+.intro_content{
+    line-height: 2.5rem;
+}
+.intro_content>div{
+    font-size: 1.2rem;
+    color: var(--gray);
+    opacity:0.7;
+}
+.intro_content{
+    padding-top:8rem;
+    padding-bottom: 8.8rem;
+}
+.intro_hello{
+    font-weight: 200;
+    color: var(--black);
+    font-size: 2rem;
+}.intro_name{
+    font-weight: bold;
+    font-size: 2.9rem;
+    margin-bottom:5px;
+    /* letter-spacing: -5px; */
+}
+.intro_name span{
+    margin: 0;
+    padding: 0;
+    -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  display:  table-cell;
+    animation:textanimate 6s linear infinite;
+}
+.delay1{
+    animation-delay: 0.5s !important;
+}
+.delay2{
+    animation-delay: 1s !important;
+}
+.delay3{
+    animation-delay: 1.5s !important;
+}
+.delay4{
+    animation-delay: 2s !important;
+}
+.delay5{
+    animation-delay: 2.5s !important;
+}
+.delay6{
+    animation-delay: 3s !important;
+}
+.delay7{
+    animation-delay: 3.5s !important;
+}
+.delay8{
+    animation-delay: 4s !important;
+}
+.delay9{
+    animation-delay: 4.5s !important;
+}
+.delay10{
+    animation-delay: 5s !important;
+}
+.delay11{
+    animation-delay: 5.5s !important;
+}
+.delay12{
+    animation-delay: 6s !important;
+}
+.gray{
+    color: rgb(36, 36, 36) !important;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+@keyframes textanimate {
+    0%,100%{
+        color:#fff;
+        filter: blur(2px);
+        text-shadow: 0 0 10px #f4bf04,
+        0 0 20px #f4bf04,
+        0 0 40px #f4bf04,
+        0 0 80px #f4bf04,
+        0 0 120px #f4bf04,
+        0 0 200px #f4bf04,
+        0 0 300px #f4bf04,
+        0 0 400px #f4bf04;
+    }
+    5%,95%{
+        color: #111;
+        filter: blur(0px);
+        text-shadow: none;
+    }
+}
+
+
+
+.social{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.social_link{
+    margin-right: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.2s;
+}
+.social_link:hover {
+    transform: translateY(-5px);
+}
+.btn{
+    display: inline-block;
+    vertical-align: top;
+    width: 12.5rem;
+    height: 3rem;
+    background:none;
+    border: 1px solid var(--black);
+    border-radius: 1.8rem;
+    cursor:pointer;
+    padding:1.1rem 2rem;
+    font-size: 1rem;
+    color: var(--black);
+    text-decoration:none;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.7;
+    transition-duration: 0.2s;
+}
+.btn:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+.intro_photo{
+    position: absolute;
+    bottom: -1px;
+    right:0;
+    z-index:1;
+    margin-bottom: 1rem;
+    width: 650px;
+    height: 490px;
+    border-radius: 1.9rem;
+}
+.text_center{
+    margin-top:3rem;
+    margin-bottom: 1.1rem;
+    text-align: center;
+    font-size: 3.1rem;
+    font-weight: bold;
+    color: var(--black);
+}
+.portfolio{
+    display: flex;
+    /* --если много работ чтобы корректно переносилось-- */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.work_img{
+  border-top-right-radius:10px;
+  border-top-left-radius: 10px;
+}
+.work{
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    transition-duration:0.2s ;
+    margin-bottom: 1rem;;
+}
+.work:hover{
+    box-shadow: 0 0 15px black;
+}
+.work_content{
+    padding:1rem 0.8rem;
+    text-transform: uppercase;
+}
+
+.work_cat{
+    font-size: 0.75rem;
+    color: var(--black);
+    margin-bottom: 0.6rem;
+}
+.work_type{
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+}
+.works{
+    margin-bottom: 7rem;
+}
+
+.work_a{
+    text-decoration: none;
+    color:var(--black)
+}
+.work_a:hover{
+    border-bottom: 3px solid var(--black);
+    padding:0 0 0px;
+    transition-duration: 0.2s;
+}
+/* ------------------------------------------------*/
+.about{
+  margin-bottom: 7rem;
+}
+.about_inner{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:nowrap;
+}
+.about_img{
+  height:600px;
+  max-width: 50%;
+  border-radius: 1rem;
+}
+.about_content{
+  width:50%;
+  margin-left: 7rem;
+  padding-top: 4.625rem;
+}
+
+
+
+
+/* ------------фича с печатающим текстом ----------*/
+.satodsan-uvemopag h2 {
+    color: #eaeaf9;
+    /* font-family: monospace; */
+    overflow: hidden;
+    border-right: .17em solid #e29508;  
+    white-space: nowrap;  
+    margin: 0 auto;  
+    /* letter-spacing: .17em; */
+    animation:  
+    typing 3.5s steps(30, end),
+    blink-caret .7s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }  
+  
+  
+  
+
+
+
+.about_title{
+  font-size: 3rem;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+.about_big_title{
+  font-size: 5.75rem;
+  color: var(--gray-light);
+  margin-bottom: 2.8rem;
+}
+.about_text{
+  font-size:0.9rem;
+  color:#a4a4a5;
+  line-height:26px;
+  margin-bottom: 3rem;
+}
+.reviews{
+    position: relative;
+    /* ---два бэкгрануда--- один поверх другого */
+    background: #353333 url(img/reviews.png) center no-repeat;
+    color: var(--gray-light);
+    text-align: center;
+    height: 15rem;
+}
+.reviews_inner{
+    padding:2.5rem 0;
+    width: 100%;
+    max-width: 830px;
+    align-items: center;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reviews_text{
+    line-height: 2rem;
+    font-size: 0.9rem;
+}
+.reviews_author{
+    /* чтобы на какое то колво пикс заходило в блок */
+    margin-top:-3.1rem;
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    line-height: 1.5rem;
+}
+.reviews_company{
+    color: var(--black);
+    font-weight: bold;
+    font-size: 1rem;
+}
+.reviews_who{
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-style: italic;
+    font-weight: 300;
+}
+.unactive{
+    opacity: 0.5;
+}
+/* ------------------------------------- */
+.courses{
+    margin-top: 17rem;
+}
+.courses_subtitle{
+    font-size: 1.1rem;
+    color: var(--gray);
+    font-weight: 300;
+    text-align: center;
+}
+.margin{
+    margin-bottom: 1rem;
+}
+.courses_inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 3.5rem;
+    margin-bottom: 9.5rem;
+}
+.course{
+    width:23.125rem;
+    margin-bottom: 1rem;
+}
+.course_name{
+    margin-top: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--black);
+    margin-bottom: 0.8rem;
+}
+.course_type{
+    font-size: 0.75rem;
+    color:var(--black);
+    margin-bottom: 1.5rem;
+}
+.course_text{
+    font-size: 0.75rem;
+    color: var(--gray);
+    opacity: 0.8;
+    line-height: 1.6rem;;
+}
+.course_btn{
+    width:8rem;
+    height: 2.2rem;
+    text-align: center;
+    background-color: var(--white);
+    font-size: 0.9rem;
+    font-weight: bold;
+    color:var(--gray);
+    border-radius: 19px;
+    border: 2px solid var(--gray);
+    padding-top: 5px;
+    transition-duration: 0.2s;
+    margin-top: 4.1rem;
+}
+.course_btn:hover{
+    background-color: var(--gray);
+    color: var(--white);
+    cursor: pointer;
+}
+.see{
+    color: var(--gray);
+    font-size:0.8rem;
+    text-decoration: none;
+    margin-left: 63rem;
+    margin-top: 1.4rem;
+}
+.see:hover{
+    text-decoration: underline;
+}
+/* ------------------------------------ */
+.footer{
+    background-color: #131212;
+    width:100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+}
+.footer_inner{
+    display: flex;
+    justify-content: space-between;
+}
+.footer_left{
+    display: flex;
+}
+.private{
+    margin-right: 1rem;
+}
+.private> span{
+    margin-left: 1rem;
+    display: inline-block;
+}
+.footer_right{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+}
+.footer_link{
+    margin-left: 1rem;
+    text-decoration: none;
+    color: var(--gray);
+    position: relative;    transition-duration: 0.2s;
+    /* ---чтобы при наведении не смещались когда появляется border bottom-- */
+    border-bottom: 2px solid  transparent;
+
+
+}
+.footer_link:hover{
+    color: var(--gray);
+    border-bottom: 2px solid var(--gray);
+}
+.modal{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color:gray;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:1000;
+    opacity: 0.9;
+
+    display: none;
+}
+.modal_dialog{
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+
+    background-color: white;
+}
+.modal_title{
+    font-size: 2rem;
+    padding:1.5rem 0;
+    color:black;
+    font-weight: bold;
+}
+.modal_photo{
+    width: 100%;
+    height: 100%;
+}
+.btn_modal{
+    margin-bottom: 3rem;
+}
+.btn_modal{
+    font-weight: 500;
+}
+.show{
+    display: flex;
+
+}
+/* ---end site--- */
+
+
+@media(max-width: 1199px){
+    .intro{
+        margin-top: -2rem;
+ /* ------------- */
+    }
+    .work{
+        width: 100%;
+        margin:1rem 3rem;
+        border-radius: 20px;
+    }
+    .work_img{
+        width: 100%;
+    }
+    .work_cat, .work_type, .work_date{
+        font-size:130%;
+    }
+/* ----------- */
+    .about_content{
+        margin-top: -2rem;
+    }
+    .about_title{
+        font-size: 3rem;
+    }
+    .about_big_title{
+        font-size: 2rem;
+    }
+    .about_text{
+        font-size: 1rem;
+        line-height: 1.9rem;
+    }
+/* ------------- */
+    .course{
+        width: 100%;
+        margin:1rem 3rem;
+    }
+    .course_img{
+        width: 100%;
+    }
+    .course_name, .course_type, .course_text{
+        font-size: 120%;
+    }
+    .course_text{
+        line-height: 2rem;
+    }
+    .course_btn{
+        margin-top: 2rem;
+        width:9.5rem;
+        height: 3rem;
+    }
+}
+@media(max-width:1000px){
+    .intro{
+        margin-top: 2rem;
+    }
+    .intro_inner{
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    .intro_photo{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .intro_content{
+        margin-top: -4rem;
+
+    }
+/* ------------------------------- */
+    .about_img{
+        width: 100%;
+        height: 100%;
+    }
+    .about_content{
+        margin-left: 2rem;
+    }
+    .about_text{
+        line-height: 1.2rem;
+        margin-top: -1rem;
+        padding-left:0;
+    }
+}
+@media(max-width:767px){
+    .user{
+        display: none;
+    }
+    .nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #000;
+        padding-bottom: 1rem;
+    }
+    .nav_link{
+        font-size: 0.8rem;
+        margin: 0;
+    }
+/* ------------------------------- */
+    .intro_content{
+        padding-top: 70px;
+    }
+    .intro_name, .intro_hello {
+        font-size: 180%;
+    }
+    .intro_name{
+        margin-bottom: 0;
+    }
+    /* --------------------------- */
+    .works{
+        margin-bottom: 0.5rem;
+    }
+    .text_center{
+        font-size: 2rem;
+    }
+    .work{
+        width: 100%;
+        border-radius: 10px;
+        font-size: 60%;
+        margin:1rem 0;
+    }
+/* ------------------------------- */
+    .about_inner{
+        display: flex;
+        flex-wrap: wrap;
+}
+    .about_img{
+        display: none;
+}
+    .about_content{
+        margin: 1rem 0.2rem;
+        width: 100%;
+    }
+    .about_title, .about_big_title{
+        font-size: 200%;
+    }
+    .about_title{
+        margin-bottom: 12px;
+    }
+    .about_text{
+        line-height: 1.1rem;
+    }
+/* ------------------------------- */
+    .reviews_text{
+        line-height: 1.05rem;
+        font-size: 0.8rem;
+}
+/*--------------------- ---------- */
+    .courses{
+        margin-top: 12rem;
+    }
+/*  -------------------------------*/
+    .course_type, .course_text, .course_name{
+        font-size:90% ;
+    }
+    .course_text{
+        line-height: 1.1rem;
+}
+/* ----------------------------------- */
+.footer_right{
+    display: none;
+}
+}

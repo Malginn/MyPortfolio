@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            text-align: center;
+            /* background-color: #eeeeee; */
+            background: url(img/1619553164_24-phonoteka_org-p-fon-dlya-igri-piksel-art-26.jpg) center;
+        }
+        label{
+            display: block;
+        }
+        h1{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 6px;           /*расстояние между символами */
+            color: #000;
+        }
+        input[typre="rabnge"]{
+            width: 100%;
+        }
+        input[type="color"]{
+            border:none;
+            background-color: transparent;
+            width: 70px;
+            height: 70px;
+            margin-bottom: 30px;
+            padding: 0;
+        }
+        input[type="color"]:hover{
+            cursor: pointer;
+        }
+        textarea{
+            resize:none;
+            width: 100%;
+            font-size:15px;
+        }
+        .card{
+            height: 100%;
+        }
+        .card-header{
+            font-weight: bold;
+            color: #fff;
+        }
+        .row > div{
+            margin-bottom: 15px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Text - shadow generator</h1>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header bg-primary">Настройки:</div>
+                        <div class="card-body">
+                            <label for="font_size">Размер шрифта</label>
+                            <input id="font_size" type="range" class="form-range" min="8" max="40" step="1" value="40">
+                            <label for="offset_x">Смещение по оси X</label>
+                            <input id="offset_x" type="range" class="form-range" min="-15" max="15" step="0.1" value="4">
+                            <label for="offset_y">Смещение по оси Y</label>
+                            <input id="offset_y" type="range" class="form-range" min="-15" max="15" step="0.1" value="-1">
+                            <label for="blur">Размытие</label>
+                            <input id="blur" type="range" class="form-range" min="0" max="15" step="0.1" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header bg-primary">Цвет:</div>
+                        <div class="card-body">
+                            <input type="color" class="color" value="#ff0000">
+                            <label for="opacity1">Прозрачность</label>
+                            <input class="form-range" type="range" id="opacity1" step="0.01" max='1' min='0' value='1'>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header bg-primary">Результат:</div>
+                        <div class="card-body">
+                            <label for="resultHEX">Цвет в HEX</label>
+                            <textarea class="form-control" id="resultHEX" rows="3" readonly></textarea> <br>
+                            <label for="resultRGBA">Цвет в RGBa</label>
+                            <textarea class="form-control" id="resultRGBA" rows="3" readonly></textarea> <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        function cssShadow({
+            font_size,
+            offset_x,
+            offset_y,
+            blur,
+            opacity1,
+            color,
+            rgba
+        }) {
+            let cssStyles = offset_x+'px '+offset_y+'px '+blur+'px '+rgba;
+            $('h1').css('text-shadow',cssStyles);
+            $('#resultHEX').val('background-color: '+color+ ';\nopacity: '+opacity1+';\nfont-size: '+font_size+'px; ');
+            $('#resultRGBA').val('text-shadow: ' +offset_x + 'px ' + offset_y + 'px ' + blur + 'px ' + rgba+ ';\nfont-size: '+ font_size+'px; ');
+
+        }
+        cssShadow({
+            font_size: 40,
+            offset_x: 4,
+            offset_y: -1,
+            opacity1: 1,
+            blur: 0,
+            opacity1: 1,
+            color: '#ff0000',
+            rgba: 'rgba(255,0,0,1)'
+        }); 
+        $(document).on('input change','input',function(){   //обработчик событий(все будет в реально времени change для input т.е. ползунков ) 1арг - событие. 2арг - инпуты
+           let font_size = $('#font_size').val();
+           let offset_x = $('#offset_x').val();
+           let offset_y = $('#offset_y').val();
+           let opacity = $('#opacity').val();
+           let blur = $('#blur').val();
+           let opacity1 = $('#opacity1').val();
+           let color = $('input[type="color"]').val()+'';
+            let red16 = color[1]+''+color[2];     //# - нулевой элемент 12 - крас. 34 - зел.  56 - синий
+            let green16 = color[3]+''+color[4];
+            let blue16 = color[5]+''+color[6];
+            let red10 = parseInt(red16,16)
+            let green10 = parseInt(green16,16)
+            let blue10 = parseInt(blue16,16)
+           let rgba = 'rgba('+red10+', '+green10+', '+blue10+', '+opacity1+')';
+
+            $('h1').css('font-size',font_size+'px ');
+            cssShadow({
+            font_size: font_size,
+            offset_x: offset_x,
+            offset_y: offset_y,
+            opacity1: opacity1,
+            blur: blur,
+            color: color,
+            rgba: rgba
+            });
+        })
+    </script>
+</body>
+</html>
